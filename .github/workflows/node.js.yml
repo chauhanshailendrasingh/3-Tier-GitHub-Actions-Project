@@ -17,3 +17,15 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
 
+    - name: compile client
+      run: |
+        cd client 
+        find . -name "*.js" -exec node --check {} + 
+
+
+
+    - name: compile api
+      run: |
+        cd api
+        find . -name "*.js" -exec node --check {} +
+
